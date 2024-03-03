@@ -1,0 +1,8 @@
+curl --request POST \
+  --url http://localhost:5000/save_emails \
+  --header 'content-type: multipart/form-data' \
+  --form event_id=123 \
+  --form 'email_subject=Test Subject' \
+  --form 'email_content=Test Content' \
+  --form 'timestamp=15 Dec 2024 16:26' \
+  --form 'recipients=user@example.com,anotheruser@example.com'

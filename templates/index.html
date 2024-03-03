@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeMail-Scheduler Management</title>
+    <script>
+        // Function to format timestamp
+        function formatTimestamp() {
+            var inputTimestamp = document.getElementById("timestamp").value;
+            var formattedTimestamp = new Date(inputTimestamp).toLocaleString('en-US', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            document.getElementById("formatted_timestamp").innerHTML = formattedTimestamp;
+        }
+    </script>
+</head>
+<body>
+    <h1>TimeMail-Scheduler Management</h1>
+    
+    <h2>Save Emails</h2>
+    <form action="/save_emails" method="POST">
+        <label for="event_id">Event ID:</label><br>
+        <input type="text" id="event_id" name="event_id"><br>
+        
+        <label for="email_subject">Email Subject:</label><br>
+        <input type="text" id="email_subject" name="email_subject"><br>
+        
+        <label for="email_content">Email Content:</label><br>
+        <textarea id="email_content" name="email_content"></textarea><br>
+        
+        <label for="timestamp">Timestamp:</label><br>
+        <input type="text" id="timestamp" name="timestamp" placeholder="Format:2024-03-03 12:00:00" onblur="formatTimestamp()"><br>
+        <span id="formatted_timestamp"></span><br> <!-- Display formatted timestamp here -->
+        
+        <label for="recipients">Recipients:</label><br>
+        <input type="text" id="recipients" name="recipients"><br>
+        
+        <input type="submit" value="Save Email">
+    </form>
+</body>
+</html>
