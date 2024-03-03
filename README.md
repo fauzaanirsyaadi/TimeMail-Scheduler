@@ -10,7 +10,7 @@ This is a simple web application built with Python 3+ and Flask microframework t
 - A script is included to periodically check the database for pending emails and send them at the specified timestamp.
 
 ## Requirement 
-1. python 3
+1. python 3 (this project use Python 3.12.2)
 2. SQlite : https://www.sqlite.org/download.html
 3. database client
 4. code editor
